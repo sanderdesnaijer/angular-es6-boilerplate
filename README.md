@@ -1,4 +1,4 @@
-# ES6 Boilerplate
+# ES6 Angular 1.X Boilerplate
 
 Angular 1.X es6 boilerplate with gulp tasks as:
 
