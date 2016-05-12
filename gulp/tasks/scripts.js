@@ -38,24 +38,24 @@ gulp.task('scripts', () => {
 
 			bundler.transform(babelify);
 
-			rebundle = (ev) => {			
+			rebundle = (ev) => {
 				// log changed file
-				ev !== undefined ? gutil.log(ev) : false;	
+				ev !== undefined ? gutil.log(ev) : false;
 
 				// build stream
 				if (gutil.env.dev) {
 					return bundler.bundle()
 						.on('error', gutil.log)
-						.pipe(source('scripts.js'))		
+						.pipe(source('scripts.js'))
 						.pipe(gulp.dest(dest + 'js/'));
 				} else {
 					return bundler.bundle()
 						.on('error', gutil.log)
-						.pipe(source('scripts.js'))		
-						.pipe(buffer())			
-						.pipe(uglify())
+						.pipe(source('scripts.js'))
+						.pipe(buffer())
+						.pipe(uglify({mangle : false}))
 						.pipe(gulp.dest(dest + 'js/'));
-				};			
+				};
   			};
 
 
@@ -63,6 +63,6 @@ gulp.task('scripts', () => {
 
 			return rebundle();
 		};
-	
+
 	return run();
-});	
+});
