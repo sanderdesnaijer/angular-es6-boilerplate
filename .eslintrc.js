@@ -37,8 +37,10 @@ module.exports = {
             "never"
         ],
 		"comma-dangle" : [
-			"error", "never"
+			"error",
+			"never"
 		],
+		"max-len" : 0,
 		"no-param-reassign" : 0,
         "no-console": [
             2,
