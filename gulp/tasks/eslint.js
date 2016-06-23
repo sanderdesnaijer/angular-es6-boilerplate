@@ -6,13 +6,13 @@ const eslint = require('gulp-eslint');
 // lint js code
 gulp.task('eslint', () => {
 
-	// src
+	// files
 	const filePath = 'js/**/*.js';
 	const src = config.paths.src;
 
 	// run task
-	const run = (e, path) => {
-		return gulp.src([src + filePath,'!node_modules/**'])
+	const run = (path) => {
+		return gulp.src(path)
 			.pipe(eslint())
 			.pipe(eslint.format());
 	};
@@ -21,9 +21,9 @@ gulp.task('eslint', () => {
 	if (gutil.env.dev) {
 		gulp.watch(filePath, { cwd: src }, file => {
 			gutil.log(file);
-			run();
+			run(file.path);
 		});
 	}
 
-	return run();
+	return run([src + filePath,'!node_modules/**']);
 });
