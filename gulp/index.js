@@ -11,7 +11,7 @@ let defaultTasks = ['styles','templates','images','fonts','scripts'];
 
 // dev enviroment with watch tasks
 if (gutil.env.dev) {
-	defaultTasks.push('eslint');
+	defaultTasks.push('eslint', 'server');
 }
 
 gulp.task('default', defaultTasks);

@@ -1,7 +1,9 @@
 'use-strict';
 
-export default () => {
+const TestFactory = () => {
 	return {
 		test: 'hello factory'
 	};
 };
+
+export default TestFactory;

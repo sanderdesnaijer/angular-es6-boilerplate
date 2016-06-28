@@ -1,6 +1,6 @@
 'use-strict';
 
-export default ($stateProvider, $urlRouterProvider) => {
+const Router = ($stateProvider, $urlRouterProvider) => {
 	$urlRouterProvider.otherwise('/');
 
 	$stateProvider
@@ -9,3 +9,5 @@ export default ($stateProvider, $urlRouterProvider) => {
 			templateUrl: 'templates/test.html'
 		});
 };
+
+export default Router;

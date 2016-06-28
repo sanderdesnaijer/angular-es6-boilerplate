@@ -1,7 +1,9 @@
 'use-strict';
 
-export default () => {
+const TestService = () => {
 	return {
 		test: 'hello service'
 	};
 };
+
+export default TestService;

@@ -1,5 +1,7 @@
 'use-strict';
 
-export default ($scope) => {
+const AppCtrl = ($scope) => {
 	$scope.test = 'hello controller';
 };
+
+export default AppCtrl;
